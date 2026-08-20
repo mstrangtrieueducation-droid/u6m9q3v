@@ -83,6 +83,10 @@ export function answerPlaceholder(help: string) {
   return "Nhập đáp án";
 }
 
+export function stripQuestionNumber(prompt: string, number: number) {
+  return prompt.replace(new RegExp(`^\\s*(?:\\(${number}\\)|${number}[.)])\\s*`), "").trim();
+}
+
 export function parseChoices(value: string): ParsedChoices | null {
   const normalized = normalizeWorksheetBody(value).replace(/\n+/g, " ").replace(/\s{2,}/g, " ").trim();
   const numbered = normalized.match(/^(\d+)[.)]\s*/);

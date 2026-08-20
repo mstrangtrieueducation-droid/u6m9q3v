@@ -15,6 +15,7 @@ import {
   normalizeWorksheetBody,
   parseChoices,
   parseSharedPassageChoices,
+  stripQuestionNumber,
   tokenizeWorksheetLine,
   worksheetQuestionPrompts,
   type WorksheetChoice,
@@ -78,7 +79,7 @@ function buildQuestionContexts(test: WorksheetTest) {
       const parsedPrompt = parseChoices(prompts.get(number) ?? "");
       const prompt = passage
         ? extractQuestionContext(shared?.sourceBody ?? section.body, number)
-        : (parsedPrompt?.prompt || prompts.get(number) || `Câu ${number}`);
+        : stripQuestionNumber(parsedPrompt?.prompt || prompts.get(number) || `Câu ${number}`, number);
       contexts.set(number, {
         prompt: prompt || `Câu ${number}`,
         choices: shared?.choicesByNumber.get(number) ?? parsedPrompt?.choices ?? [],

@@ -6,6 +6,7 @@ import {
   normalizeWorksheetBody,
   parseChoices,
   parseSharedPassageChoices,
+  stripQuestionNumber,
   tokenizeWorksheetLine,
 } from "../src/worksheet-format.ts";
 import { worksheetTests } from "../src/worksheet-data.ts";
@@ -114,4 +115,9 @@ test("extracts the actual sentence for answer review", () => {
   const body = "Last year, I 55) ______ (celebrate) at home and everyone 56) ______ (enjoy) themselves. It 57) ______ (open) tomorrow.";
   assert.match(extractQuestionContext(body, 56), /everyone 56\)/);
   assert.match(extractQuestionContext(body, 57), /It 57\)/);
+});
+
+test("removes a duplicated leading question number while keeping the prompt", () => {
+  assert.equal(stripQuestionNumber("48. That video belongs to Carol and Doug.", 48), "That video belongs to Carol and Doug.");
+  assert.equal(stripQuestionNumber("(48) ______ is the answer.", 48), "______ is the answer.");
 });
