@@ -72,6 +72,17 @@ function choiceMarkers(value: string) {
   }));
 }
 
+export function answerPlaceholder(help: string) {
+  const instruction = help.toLowerCase();
+  if (/fill(?:ing)? (?:in )?a,? an or the where necessary/.test(instruction)) return "Nhập a / an / the / Ø";
+  if (/fill in the where necessary/.test(instruction)) return "Nhập the hoặc Ø";
+  if (/fill in a,? an,? or some/.test(instruction)) return "Nhập a / an / some";
+  if (/correct.*tick|tick.*extra word|sentence is correct/.test(instruction)) return "Nhập từ thừa hoặc ✓";
+  if (/write one word in each gap/.test(instruction)) return "Nhập đúng 1 từ";
+  if (/rewrite|complete (?:each )?second sentence/.test(instruction)) return "Nhập câu viết lại";
+  return "Nhập đáp án";
+}
+
 export function parseChoices(value: string): ParsedChoices | null {
   const normalized = normalizeWorksheetBody(value).replace(/\n+/g, " ").replace(/\s{2,}/g, " ").trim();
   const numbered = normalized.match(/^(\d+)[.)]\s*/);

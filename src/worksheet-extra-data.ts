@@ -2123,13 +2123,13 @@ export const extraWorksheetTests: Record<string, WorksheetTest> = {
         "help": "Ex 5: If a sentence is correct, put a tick (✓). If there is an extra word in a sentence, write the word.",
         "body": "40. Is that my milkshake or yours milkshake?                                 _______________\n      41. Look where the dog has put its bone!                                         _______________\n      42. I haven’t got a camera with me because I’ve lent mine to my brother.         _______________\n      43. Your DVD player is just the same as theirs is.                                 _______________\n      44. Was it your decision or hers decision?                                         _______________\n      45. You can borrow my laptop, but why aren’t you using yours laptop?         _______________\n      46. I think those are your CDs and these are ours.                                 _______________\n      47. This is her book, these are your books and these two are mine books.         _______________\n      48. That video belongs to Carol and Doug – at least, I think it’s theirs video.        _______________",
         "answerStart": 40,
-        "answerEnd": 47
+        "answerEnd": 48
       },
       {
         "title": "PHẦN 6",
         "help": "Ex 6: Fill in the correct reflexive pronouns or each other.",
         "body": "49. A: What an interesting sculpture!\nB: Do you like it? I made it ________ .\n      50. A: Eric, are you going to the cinema with your sisters?\nB: No, Mum. They are going by ________ .\n      51. A: Did you have a nice time at the funfair?\nB: Yes, we all enjoyed ________ .\n      52. A: How is Paula?\nB: I don’t know. We haven’t seen ________ for a long time.\n      53. A: How did you hurt your hand?\nB: I burnt _______ while frying eggs this morning.\n      54. A: Does Ann know Tara?\nB: Yes. Actually, they’ve been sending emails to ________ for months now.\n      55. A: Shouldn’t you turn off the TV before you fall asleep?\nB: I don’t have to. It will actually turn ________ off in half an hour.\n      56. A: Is there any dessert?\nB: Of course. Help ________ to some chocolate pudding in the fridge.\n      57. A: Do you have to help your little brother get ready?\nB: Oh, no. He can dress ________.",
-        "answerStart": 48,
+        "answerStart": 49,
         "answerEnd": 57
       }
     ],
@@ -2372,7 +2372,7 @@ export const extraWorksheetTests: Record<string, WorksheetTest> = {
       {
         "number": 48,
         "answer": "video",
-        "explanation": "Đáp án mẫu: video. Fill in the correct reflexive pronouns or each other. Chú ý dùng đúng cấu trúc và giữ nguyên nghĩa của câu."
+        "explanation": "Đáp án mẫu: video. Cụm theirs video bị thừa từ video vì theirs đã là đại từ sở hữu và có thể đứng một mình."
       },
       {
         "number": 49,
